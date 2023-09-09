@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pen Tool</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="side-bar">
+        <div class="grid">
+          <h1>Choose grid size</h1>
+          <div class="options">
+            <div class="option">
+              <label for="grid-size">32 x 32</label>
+              <input
+                type="range"
+                min="10"
+                max="128"
+                id="grid-size"
+                name="grid-size"
+                placeholder="Maximum is 128"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="grid" id="grid"></div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
