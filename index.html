@@ -9,20 +9,25 @@
   <body>
     <div class="container">
       <div class="side-bar">
-        <div class="grid">
+        <div class="tool">
+          <h1>Pen color</h1>
+          <div class="option">
+            <input type="color" id="pen-color" name="pen-color" />
+          </div>
+        </div>
+
+        <div class="tool grid-size">
           <h1>Choose grid size</h1>
-          <div class="options">
-            <div class="option">
-              <label for="grid-size">32 x 32</label>
-              <input
-                type="range"
-                min="10"
-                max="128"
-                id="grid-size"
-                name="grid-size"
-                placeholder="Maximum is 128"
-              />
-            </div>
+          <div class="option">
+            <label for="grid-size">32 x 32</label>
+            <input
+              type="range"
+              min="10"
+              max="128"
+              id="grid-size"
+              name="grid-size"
+              placeholder="Maximum is 128"
+            />
           </div>
         </div>
       </div>

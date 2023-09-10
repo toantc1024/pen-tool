@@ -1,7 +1,10 @@
 const gridView = document.querySelector("#grid");
+
 const range = document.querySelector("#grid-size");
 const rangeLabel = document.querySelector('label[for="grid-size"]');
 
+let penDown = false;
+let penColor = "black";
 let mode = "draw";
 
 const drawGrid = (gridSize) => {
@@ -12,6 +15,13 @@ const drawGrid = (gridSize) => {
   for (let i = 0; i < gridSize * gridSize; i++) {
     const pixel = document.createElement("div");
     pixel.className = "pixel";
+
+    pixel.addEventListener("mouseover", () => {
+      if (penDown) {
+        pixel.style.background = "black";
+      }
+    });
+
     gridView.appendChild(pixel);
   }
 };
@@ -25,6 +35,18 @@ const setRange = (size) => {
 range.addEventListener("change", (e) => {
   let newSize = e.target.value;
   setRange(newSize);
+});
+
+gridView.addEventListener("mousemove", () => {
+  if (penDown) console.log("Drawing...");
+});
+
+gridView.addEventListener("mousedown", () => {
+  penDown = true;
+});
+
+gridView.addEventListener("mouseup", () => {
+  penDown = false;
 });
 
 window.addEventListener("DOMContentLoaded", () => {

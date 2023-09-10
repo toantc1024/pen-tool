@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
 html,
 body {
+  font-family: "Indie Flower", cursive;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -13,7 +16,54 @@ body {
 }
 
 .side-bar {
-  background: red;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.tool {
+  border-radius: 25px;
+  font-size: 1em;
+  margin: 25px;
+  padding: 25px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  color: dodgerblue;
+}
+
+label {
+  font-size: 2em;
+  text-align: center;
+  background-color: dodgerblue;
+  color: white;
+  border-radius: 5px;
+}
+
+input[type="range"]::-webkit-scrollbar {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 15rem;
+}
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #053a5f;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/******** Firefox ********/
+input[type="range"]::-moz-range-track {
+  background: #053a5f;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .content {
@@ -21,7 +71,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aqua;
+  background-color: dodgerblue;
   padding: 25px;
 }
 
@@ -30,17 +80,41 @@ body {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
-  width: 500px;
-  height: 500px;
-  background: gray;
+  width: 600px;
+  height: 600px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+@media screen and (max-width: 600px) {
+  #grid {
+    width: 250px;
+    height: 250px;
+  }
 }
 
 .pixel {
   background-color: white;
+
   user-select: none;
 }
 
 .option {
   display: flex;
+  border: none;
   flex-direction: column;
+}
+
+#pen-color {
+  appearance: none;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+}
+
+#pen-color::-webkit-color-swatch {
+  border-radius: 50%;
+  border: none;
+  user-select: none;
 }
